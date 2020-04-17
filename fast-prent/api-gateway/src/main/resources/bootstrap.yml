@@ -11,3 +11,5 @@ spring:
           uri:  https://blog.csdn.net/
           predicates:
             - Path=/xxx/**
+
+#https://www.cnblogs.com/babycomeon/p/11161073.html

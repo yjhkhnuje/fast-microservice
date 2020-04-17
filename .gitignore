@@ -1,0 +1,7 @@
+/fast-prent/oauth2-server/target/classes/bootstrap.yml
+/fast-prent/fast-prent.iml
+/fast-prent/oauth2-server/oauth2-server.iml
+/fast-prent/oauth2-server/target/classes/META-INF/oauth2-server.kotlin_module
+/fast-prent/oauth2-server/target/classes/com/lzm/fast/Oauth2ServerApplication.class
+/fast-prent/.idea/workspace.xml
+*.iml
