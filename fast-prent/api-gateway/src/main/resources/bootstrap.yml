@@ -8,6 +8,6 @@ spring:
     gateway:
       routes:
         - id: gateway-service
-          uri:  https://www.baidu.com
+          uri:  https://blog.csdn.net/
           predicates:
             - Path=/xxx/**

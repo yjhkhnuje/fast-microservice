@@ -5,6 +5,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>oauth2-server</module>
+        <module>oauth-server</module>
+        <module>register-center</module>
+        <module>api-gateway</module>
     </modules>
 
     <parent>
