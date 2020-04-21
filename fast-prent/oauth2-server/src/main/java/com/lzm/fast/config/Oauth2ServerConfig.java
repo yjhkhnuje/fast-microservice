@@ -50,7 +50,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(new JdbcTokenStore(dataSource))
                 .accessTokenConverter(jwtAccessTokenConverter())
                 .authenticationManager(authenticationManager)
-               // .exceptionTranslator(webResponseExceptionTranslator)
+                // .exceptionTranslator(webResponseExceptionTranslator)
                 .reuseRefreshTokens(false)
                 .userDetailsService(fastUserDetailsService);
     }
@@ -62,7 +62,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("permitAll()")
                 .passwordEncoder(passwordEncoder());
-               // .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);
+        // .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);
     }
 
 
@@ -79,7 +79,4 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(new BCryptPasswordEncoder().encode("123456"));
-    }
 }
