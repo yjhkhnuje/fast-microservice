@@ -14,11 +14,11 @@ public class AuthDto {
 
     private String authType;
     private String username;
-    private Map<String,String[]> authParameters;
+    private Map<String, String[]> parameters;
 
-    public String getAuthParameter(String paramter){
-        String[] values = this.authParameters.get(paramter);
-        if(values != null && values.length > 0){
+    public String getParameter(String paramter) {
+        String[] values = this.parameters.get(paramter);
+        if (values != null && values.length > 0) {
             return values[0];
         }
         return null;

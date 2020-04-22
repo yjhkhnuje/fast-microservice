@@ -7,7 +7,9 @@ package com.lzm.fast.authtype;
  */
 public enum AuthType {
 
-    USERNAME_PASSWORD("PASSWORD","密码模式");
+    USERNAME_PASSWORD("PASSWORD", "密码模式"),
+    SMS("SMS", "短信认证模式"),
+    VERIFICATION_CODE("VC", "验证码");
 
     private String code;
 
@@ -17,5 +19,14 @@ public enum AuthType {
     AuthType(String code, String describe) {
         this.code = code;
         this.describe = describe;
+    }
+
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getDescribe() {
+        return describe;
     }
 }

@@ -1,7 +1,11 @@
 package com.lzm.fast.service;
 
+import com.alibaba.druid.util.StringUtils;
+import com.lzm.fast.authtype.AuthDto;
+import com.lzm.fast.authtype.AuthModContext;
+import com.lzm.fast.authtype.AuthMode;
+import com.lzm.fast.authtype.AuthType;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -21,13 +25,20 @@ import java.util.Set;
 @Slf4j
 public class FastUserDetailsService implements UserDetailsService {
 
-    @Autowired
-    private UserService userService;
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("当前登录用户名：{}", username);
-        com.lzm.fast.entity.User user = userService.findByUsername(username);
+        //没传时auth_type时，默认使用账号密码登录
+        AuthDto authDto = AuthModContext.get();
+        if (authDto == null){
+            //授权码时会跳到登录，会不走过滤器（WebSecurity）
+            authDto = new AuthDto();
+            authDto.setUsername(username);
+            authDto.setAuthType(AuthType.USERNAME_PASSWORD.getCode());
+        }
+        AuthMode authMode = AuthModContext.getAuthMode(authDto.getAuthType());
+        com.lzm.fast.entity.User user = authMode.authenticate(authDto);
         if (user == null) {
             throw new UsernameNotFoundException("未找到用户");
         }

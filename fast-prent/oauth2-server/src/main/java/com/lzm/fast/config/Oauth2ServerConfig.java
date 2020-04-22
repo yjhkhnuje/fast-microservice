@@ -1,5 +1,6 @@
 package com.lzm.fast.config;
 
+import com.lzm.fast.filter.AuthModeFilter;
 import com.lzm.fast.service.FastUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,8 +62,8 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         security.allowFormAuthenticationForClients()
                 .tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("permitAll()")
-                .passwordEncoder(passwordEncoder());
-        // .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);
+                .passwordEncoder(passwordEncoder())
+                .addTokenEndpointAuthenticationFilter(new AuthModeFilter());
     }
 
 
