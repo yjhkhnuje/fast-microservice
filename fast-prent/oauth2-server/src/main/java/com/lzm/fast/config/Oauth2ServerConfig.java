@@ -1,5 +1,6 @@
 package com.lzm.fast.config;
 
+import com.lzm.fast.exception.AuthRespExceptionTranslator;
 import com.lzm.fast.filter.AuthModeFilter;
 import com.lzm.fast.service.FastUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,9 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     private FastUserDetailsService fastUserDetailsService;
 
     @Autowired
+    private AuthRespExceptionTranslator authRespExceptionTranslator;
+
+    @Autowired
     private DataSource dataSource;
 
     @Value("${jwt.signing.key:lzm-fast}")
@@ -51,7 +55,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(new JdbcTokenStore(dataSource))
                 .accessTokenConverter(jwtAccessTokenConverter())
                 .authenticationManager(authenticationManager)
-                // .exceptionTranslator(webResponseExceptionTranslator)
+                .exceptionTranslator(authRespExceptionTranslator)
                 .reuseRefreshTokens(false)
                 .userDetailsService(fastUserDetailsService);
     }
