@@ -8,6 +8,7 @@
         <module>oauth-server</module>
         <module>register-center</module>
         <module>api-gateway</module>
+        <module>resource-common</module>
     </modules>
 
     <parent>
@@ -73,13 +74,5 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
