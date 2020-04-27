@@ -5,6 +5,33 @@ spring:
   application:
     name: fast-code-generation
   cloud:
+    #nacos 注册中心 与 配置中心
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  #数据源
+  datasource:
+    password: 123456
+    username: root
+    url: jdbc:p6spy:mysql://127.0.0.1:3306/ibk?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    type: com.zaxxer.hikari.HikariDataSource
+
+
+#mybatis-plus
+mybatis-plus:
+  #MyBatis Mapper 所对应的 XML 文件位置
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      #全局默认主键类型
+      id-type: auto
+      #逻辑已删除值,(逻辑删除下有效)
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      #表名、是否使用下划线命名
+      table-underline: true
+  configuration:
+    map-underscore-to-camel-case: true
+    #全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true。
+    cache-enabled: false

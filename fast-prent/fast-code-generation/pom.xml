@@ -10,26 +10,40 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fast-code-generation</artifactId>
+    <properties>
+        <mybatis.plus.version>3.3.1.tmp</mybatis.plus.version>
+        <p6spy.version>3.8.5</p6spy.version>
+        <lzm.fast>1.0-RELEASE</lzm.fast>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        <!-- mybatis-plus  -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis.plus.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>-->
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
+        </dependency>
+        <!-- 注册中心 与 配置中心 -->
         <dependency>
             <groupId>com.lzm.fast</groupId>
             <artifactId>nacos-common</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>${lzm.fast}</version>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
