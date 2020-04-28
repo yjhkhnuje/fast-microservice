@@ -32,6 +32,22 @@
             <artifactId>p6spy</artifactId>
             <version>${p6spy.version}</version>
         </dependency>
+
+        <!-- 代码生成 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis.plus.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- 代码生成，模板引擎 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- 注册中心 与 配置中心 -->
         <dependency>
             <groupId>com.lzm.fast</groupId>
@@ -44,6 +60,9 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
