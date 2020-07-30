@@ -1,4 +1,4 @@
-package com.lzm.fast.base;
+package com.lzm.fast.base.dto;
 
 import lombok.Data;
 

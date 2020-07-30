@@ -1,7 +1,7 @@
 package com.lzm.fast.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lzm.fast.base.BasePageDto;
+import com.lzm.fast.base.dto.BasePageDto;
 import com.lzm.fast.entity.IbkFeeType;
 import com.lzm.fast.service.IbkFeeTypeService;
 import org.springframework.beans.factory.annotation.Autowired;

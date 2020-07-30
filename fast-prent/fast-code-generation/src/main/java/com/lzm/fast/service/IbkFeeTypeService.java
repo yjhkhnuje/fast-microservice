@@ -2,7 +2,7 @@ package com.lzm.fast.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lzm.fast.base.BasePageDto;
+import com.lzm.fast.base.dto.BasePageDto;
 import com.lzm.fast.entity.IbkFeeType;
 
 /**

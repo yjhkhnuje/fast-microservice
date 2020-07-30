@@ -11,6 +11,9 @@
         <module>resource-common</module>
         <module>fast-code-generation</module>
         <module>nacos-common</module>
+        <module>lzm-fast-core</module>
+        <module>lzm-fast-framework</module>
+        <module>lzm-fast-framework-core</module>
     </modules>
 
     <parent>
